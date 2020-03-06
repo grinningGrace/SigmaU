@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton
 import CoursePage
 from PyQt5 import QtCore, QtGui, QtWidgets
-import MainPage
+
 
 class MainPage(QMainWindow):
     def __init__(self):
@@ -20,7 +20,7 @@ class MainPage(QMainWindow):
         self.hide()
         self.s = CoursePage.CoursePage()
         self.s.show()
-class Ui_MainWindow(object):
+class Ui_MainWindow(QMainWindow):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
@@ -46,6 +46,7 @@ class Ui_MainWindow(object):
         self.label_4.setObjectName("label_4")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(300, 400, 113, 32))
+        self.pushButton.clicked.connect(self.on_click_btn1)
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(480, 400, 113, 32))
@@ -71,3 +72,12 @@ class Ui_MainWindow(object):
         self.label_4.setText(_translate("MainWindow", "by Grace Wang"))
         self.pushButton.setText(_translate("MainWindow", "Log in"))
         self.pushButton_2.setText(_translate("MainWindow", "Register"))
+
+
+    def on_click_btn1(self):
+        self.hide()
+        Dialog = QtWidgets.QDialog()
+        ui = CoursePage.Ui_Dialog()
+        ui.setupUi(Dialog)
+        self.s = Dialog
+        self.s.show()
