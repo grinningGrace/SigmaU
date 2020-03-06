@@ -13,3 +13,6 @@ class AlertInfo(QtWidgets.QDialog,Ui_Dialog):
 
     def confirm_return(self):
         self.hide()
+
+    def set_label_delete_msg(self):
+        self.label_2.setText("This Course is successfully deleted!")
