@@ -16,10 +16,6 @@ class MainPage(QMainWindow,Ui_MainWindow):
 
 
 
-
-
-
-
     def on_btn1_click(self):
         self.hide()
         self.s = CoursePage. CoursePage()
