@@ -1,6 +1,6 @@
 # SigmaU
 
-UIC DBM TA helper is a tool for asssistant instructors in DBM, UIC.
+UIC DBM TA helper is a tool for assistant instructors in DBM, UIC.
 
 
 
