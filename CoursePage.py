@@ -8,6 +8,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from CourseaPageUi import Ui_Dialog
 import AddCoursePage
 import MainPage
+import CoursePanel
 class CoursePage(QtWidgets.QDialog,Ui_Dialog):
     def __init__(self):
         super(CoursePage, self).__init__()
@@ -49,5 +50,10 @@ class CoursePage(QtWidgets.QDialog,Ui_Dialog):
         self.s.show()
 
 
+
     def CourseItemClicked(self, qModelIndex):
-        QMessageBox.information(self,'ListWidget','你选择了：'+self.listView.qList[qModelIndex.row()])
+        # QMessageBox.information(self,'ListWidget','你选择了：'+self.listView.qList[qModelIndex.row()])
+        cname = self.listView.qList[qModelIndex.row()]
+        self.hide()
+        self.s = CoursePanel.CoursePanel(cname)
+        self.s.show()
