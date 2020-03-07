@@ -1,12 +1,6 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton
+from PyQt5 import QtWidgets
 import MainPage
-from PyQt5 import QtCore, QtGui, QtWidgets
-import Register
-import AddCoursePage
-import deleteCoursePage
-import MainPage
-from AlertInfoUi import Ui_Dialog
+from Ui.AlertInfoUi import Ui_Dialog
 
 class AlertInfo(QtWidgets.QDialog,Ui_Dialog):
     def __init__(self,Dialog):

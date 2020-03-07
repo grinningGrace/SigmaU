@@ -8,7 +8,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import qtawesome
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -35,6 +35,10 @@ class Ui_Dialog(object):
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+
+
+
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate

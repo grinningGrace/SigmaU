@@ -1,11 +1,8 @@
-import sys
-
 from PyQt5.QtCore import QStringListModel
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton, QListView, QMessageBox
-import MainPage
+from PyQt5.QtWidgets import QListView
 import deleteCoursePage
-from PyQt5 import QtCore, QtGui, QtWidgets
-from CourseaPageUi import Ui_Dialog
+from PyQt5 import QtWidgets
+from Ui.CourseaPageUi import Ui_Dialog
 import AddCoursePage
 import MainPage
 import CoursePanel

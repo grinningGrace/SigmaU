@@ -1,11 +1,8 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton
-import MainPage
 import AlertInfo
 import CoursePage
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtWidgets
 
-from AddCoursePageUi import Ui_Dialog
+from Ui.AddCoursePageUi import Ui_Dialog
 
 class AddCoursePage(QtWidgets.QDialog,Ui_Dialog):
     def __init__(self):

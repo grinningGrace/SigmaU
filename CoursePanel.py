@@ -1,12 +1,7 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton
-import CoursePage
-import Register
-import CoursePanelUi
 import ScorePanel
 import CoursePage
-from PyQt5 import QtCore, QtGui, QtWidgets
-from CoursePanelUi import Ui_Dialog
+from PyQt5 import QtWidgets
+from Ui.CoursePanelUi import Ui_Dialog
 
 class CoursePanel(QtWidgets.QDialog, Ui_Dialog):
     def __init__(self,cname):

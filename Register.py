@@ -1,10 +1,6 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton
-import CoursePage
-from PyQt5 import QtCore, QtGui, QtWidgets
-from Main_page_Ui import Ui_MainWindow
+from PyQt5 import QtWidgets
 import AlertInfo
-from RegisterUi import Ui_Dialog
+from Ui.RegisterUi import Ui_Dialog
 
 class Register(QtWidgets.QDialog, Ui_Dialog):
     def __init__(self):
