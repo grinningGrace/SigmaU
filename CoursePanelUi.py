@@ -38,7 +38,7 @@ class Ui_Dialog(object):
         self.NmList.setGeometry(QtCore.QRect(70, 140, 321, 41))
         self.NmList.setObjectName("NmList")
 
-       
+
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
