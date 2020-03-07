@@ -5,7 +5,7 @@
 # Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
-from tkinter.font import Font
+
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
@@ -19,8 +19,6 @@ class Ui_Dialog(object):
         self.label.setObjectName("label")
         self.Scores = QtWidgets.QPushButton(Dialog)
         self.Scores.setGeometry(QtCore.QRect(70, 190, 321, 41))
-
-
         self.Scores.setObjectName("Scores")
         self.CRA = QtWidgets.QPushButton(Dialog)
         self.CRA.setGeometry(QtCore.QRect(70, 240, 321, 41))
@@ -31,14 +29,12 @@ class Ui_Dialog(object):
         self.Analysis = QtWidgets.QPushButton(Dialog)
         self.Analysis.setGeometry(QtCore.QRect(70, 340, 321, 41))
         self.Analysis.setObjectName("Analysis")
-        self.Rtn = QtWidgets.QPushButton(Dialog)
-        self.Rtn.setGeometry(QtCore.QRect(320, 460, 113, 32))
-        self.Rtn.setObjectName("Rtn")
+        self.Goback = QtWidgets.QPushButton(Dialog)
+        self.Goback.setGeometry(QtCore.QRect(320, 460, 113, 32))
+        self.Goback.setObjectName("Goback")
         self.NmList = QtWidgets.QPushButton(Dialog)
         self.NmList.setGeometry(QtCore.QRect(70, 140, 321, 41))
         self.NmList.setObjectName("NmList")
-
-
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -51,5 +47,5 @@ class Ui_Dialog(object):
         self.CRA.setText(_translate("Dialog", "Generate CRA Report"))
         self.Grade.setText(_translate("Dialog", "Generate Grade Report"))
         self.Analysis.setText(_translate("Dialog", "Data Analysis"))
-        self.Rtn.setText(_translate("Dialog", "Return"))
+        self.Goback.setText(_translate("Dialog", "Go back"))
         self.NmList.setText(_translate("Dialog", "Import Updated Name List"))

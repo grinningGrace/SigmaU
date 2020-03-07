@@ -17,7 +17,7 @@ class CoursePage(QtWidgets.QDialog,Ui_Dialog):
         self.setupUi(self)
 
 
-        l = ['IEI 1001', 'IEI 1002', 'IEI 1008','CBWA', 'MSM' ,'BSDA','BDA']
+        l = ['IEI (1001)', 'IEI (1002)', 'IEI (1008)','CBWA(1001)', 'MSM (1001)' ,'BSDA (1001)','BDA(1001)']
         slm = QStringListModel()
         self.listView.qList = l
 

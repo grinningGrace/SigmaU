@@ -62,7 +62,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Return</string>
+    <string>Go back</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">

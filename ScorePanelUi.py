@@ -39,5 +39,5 @@ class Ui_Dialog(object):
         self.pushButton.setText(_translate("Dialog", "Input Matrix based Scores"))
         self.pushButton_2.setText(_translate("Dialog", "Input Non-Matrix based Scores"))
         self.pushButton_3.setText(_translate("Dialog", "View  Score Reports List"))
-        self.pushButton_4.setText(_translate("Dialog", "Return"))
+        self.pushButton_4.setText(_translate("Dialog", "Go back"))
         self.label.setText(_translate("Dialog", "Strategic Management 1001"))

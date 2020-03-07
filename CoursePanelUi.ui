@@ -78,7 +78,7 @@
     <string>Data Analysis</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Rtn">
+  <widget class="QPushButton" name="Goback">
    <property name="geometry">
     <rect>
      <x>320</x>
@@ -88,7 +88,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Return</string>
+    <string>Go back</string>
    </property>
   </widget>
   <widget class="QPushButton" name="NmList">

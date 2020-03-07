@@ -4,6 +4,7 @@ import CoursePage
 import Register
 import CoursePanelUi
 import ScorePanel
+import CoursePage
 from PyQt5 import QtCore, QtGui, QtWidgets
 from CoursePanelUi import Ui_Dialog
 
@@ -14,6 +15,7 @@ class CoursePanel(QtWidgets.QDialog, Ui_Dialog):
         self.setupUi(self)
         self.label.setText(cname)
         self.Scores.clicked.connect(lambda: self.callScorePanel(cname))
+        self.Goback.clicked.connect(self.goback)
 
 
 
@@ -24,8 +26,10 @@ class CoursePanel(QtWidgets.QDialog, Ui_Dialog):
         self.s.show()
 
 
-
-
+    def goback(self):
+        self.hide()
+        self.s = CoursePage.CoursePage()
+        self.s.show()
 
 
 
