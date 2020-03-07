@@ -18,7 +18,7 @@ class deleteCousePage(QtWidgets.QDialog, Ui_Dialog):
 
     def course_delete_btn_clicked(self):
 
-        self.s = AlertInfo.AlertInfo()
+        self.s = AlertInfo.AlertInfo(self)
         self.s.set_label_delete_msg()
         self.s.show()
 
@@ -26,3 +26,7 @@ class deleteCousePage(QtWidgets.QDialog, Ui_Dialog):
         self.hide()
         self.s = CoursePage.CoursePage()
         self.s.show()
+
+
+    def get_class_name(self):
+        return self.__class__.__name__

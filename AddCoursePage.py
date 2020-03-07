@@ -16,7 +16,7 @@ class AddCoursePage(QtWidgets.QDialog,Ui_Dialog):
         self.pushButton_2.clicked.connect(self.goback)
 
     def course_add_btn_clicked(self):
-        self.s = AlertInfo.AlertInfo()
+        self.s = AlertInfo.AlertInfo(self)
         self.s.setFixedSize(450,317)
         self.s.show()
 
@@ -24,3 +24,7 @@ class AddCoursePage(QtWidgets.QDialog,Ui_Dialog):
         self.hide()
         self.s = CoursePage.CoursePage()
         self.s.show()
+
+
+    def get_class_name(self):
+        return self.__class__.__name__
