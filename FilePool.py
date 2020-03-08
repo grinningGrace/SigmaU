@@ -10,7 +10,7 @@ from Ui.FilePoolUi import Ui_Dialog
 import ScorePanel
 import CheckBoxHeader
 import MyModel
-
+import MyButtonDelegate
 
 def SIGNAL(param):
     pass
@@ -33,9 +33,16 @@ class FilePool(QtWidgets.QDialog, Ui_Dialog):
         self.tableView.setHorizontalHeader(header)
         self.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         header.clicked.connect(self.myModel.headerClick)
-        self.tableView.clicked.connect(self.click_update)
+
+        self.tableView.setItemDelegateForColumn(3, MyButtonDelegate.MyButtonDelegate(self))
 
 
+    def cellUpdateButtonClicked(self):
+        print("Update Cell Button Clicked", self.sender().index)
+
+
+    def cellDeleteButtonClicked(self):
+        print("Delete Cell Button Clicked", self.sender().index)
 
 
     def goback(self, cname):
@@ -45,5 +52,5 @@ class FilePool(QtWidgets.QDialog, Ui_Dialog):
 
 
 
-    def click_update(self):
-        print("test")
+
+

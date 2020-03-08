@@ -24,8 +24,7 @@ class MyModel(QAbstractTableModel):
         if role == Qt.DisplayRole:
             if col != self._column_count-1:
                 return 'Row %d, Column %d' % (row + 1, col + 1)
-            elif col ==self._column_count-1:
-                return "Update"
+
         elif role == Qt.CheckStateRole:
             if col == 0:
                 return Qt.Checked if self.checkList[row] == 'Checked' else Qt.Unchecked
@@ -58,7 +57,7 @@ class MyModel(QAbstractTableModel):
                 elif section == 2:
                     return 'Upload Time'
                 elif section == 3:
-                    return 'Update the file'
+                    return 'operation'
 
     def headerClick(self, isOn):
         self.beginResetModel()

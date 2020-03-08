@@ -26,9 +26,6 @@ class Ui_Dialog(object):
         self.pushButton_2 = QtWidgets.QPushButton(Dialog)
         self.pushButton_2.setGeometry(QtCore.QRect(110, 470, 113, 32))
         self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_3 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_3.setGeometry(QtCore.QRect(370, 470, 113, 32))
-        self.pushButton_3.setObjectName("pushButton_3")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -39,4 +36,3 @@ class Ui_Dialog(object):
         self.label.setText(_translate("Dialog", "TextLabel"))
         self.pushButton.setText(_translate("Dialog", "Go back"))
         self.pushButton_2.setText(_translate("Dialog", "Download"))
-        self.pushButton_3.setText(_translate("Dialog", "Delete"))
