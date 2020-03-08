@@ -213,6 +213,23 @@
     <string>Cancel</string>
    </property>
   </widget>
+  <zorder>label_2</zorder>
+  <zorder>label</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_5</zorder>
+  <zorder>label_6</zorder>
+  <zorder>plainTextEdit_5</zorder>
+  <zorder>label_7</zorder>
+  <zorder>plainTextEdit_6</zorder>
+  <zorder>label_9</zorder>
+  <zorder>plainTextEdit_8</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>pushButton_2</zorder>
+  <zorder>plainTextEdit_3</zorder>
+  <zorder>label_8</zorder>
+  <zorder>plainTextEdit_7</zorder>
+  <zorder>plainTextEdit_4</zorder>
+  <zorder>plainTextEdit</zorder>
  </widget>
  <resources/>
  <connections/>
