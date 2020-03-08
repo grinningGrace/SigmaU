@@ -15,7 +15,7 @@ class ScorePanel(QtWidgets.QDialog,Ui_Dialog):
     def callFilePool(self,cname):
         self.hide()
         self.s = FilePool.FilePool(cname)
-        self.s.setFixedSize(900,590)
+        # self.s.setFixedSize(900,700)
 
         self.s.show()
 
