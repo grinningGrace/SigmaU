@@ -14,7 +14,7 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
         super(MbasedScore_S1, self).__init__()
         self.setupUi(self)
         self.label_cname.setText(cname)
-        stype = self.comboBox.currentText()+","+self.comboBox.currentText()
+        stype = self.comboBox.currentText()+","+self.comboBox_2.currentText()
         percent = 0
         if self.comboBox_3.currentText() =="Yes":
             self.label_7.setVisible(False)

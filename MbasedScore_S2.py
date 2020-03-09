@@ -1,7 +1,19 @@
 from PyQt5.QtCore import QStringListModel
-from PyQt5.QtWidgets import QListView
+from PyQt5.QtWidgets import QListView, QFileDialog
+from qtpy import QtCore
+
 import deleteCoursePage
 from PyQt5 import QtWidgets
+
+import pandas as pd
+from xlutils.copy import copy
+import xlrd
+import xlwt
+import openpyxl
+# import pyexcel as p
+
+
+import MbasedScore_S1
 
 from Ui.MbasedScore_S2_Ui import Ui_Dialog
 
@@ -15,4 +27,36 @@ class MbasedScore_S2(QtWidgets.QDialog,Ui_Dialog):
         self.setupUi(self)
         self._stype = stype
         self._percent = percent
+        self.pushButton_3.clicked.connect(lambda :self.goback(cname))
+        self.label_courseName.setText(cname)
+        self.label_scoreFileType.setText(stype)
+        self.pushButton.clicked.connect(self.saveMatrix)
+
+
+
+    def goback(self,cname):
+        self.hide()
+        self.s = MbasedScore_S1.MbasedScore_S1(cname)
+        self.s.show()
+
+
+    def saveMatrix(self):
+        wbFormulas = openpyxl.load_workbook('Matrix Template.xlsx')
+        global save_path
+        fileName, ok2 = QFileDialog.getSaveFileName(self, "Save File", "./", "Excel file (*.xlsx)")
+        print(fileName)  # 打印保存文件的全部路径（包括文件名和后缀名）
+
+
+        wbFormulas.save(fileName)
+        # p.save_book_as(file_name='Matrix Template.xlsx',
+        #                dest_file_name='fileName')
+
+
+
+
+
+
+
+
+
 

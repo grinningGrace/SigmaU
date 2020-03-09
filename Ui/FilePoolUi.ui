@@ -73,7 +73,7 @@
    </column>
    <column>
     <property name="text">
-     <string>Score Type</string>
+     <string>FileType</string>
     </property>
    </column>
    <column>

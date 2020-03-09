@@ -47,7 +47,7 @@ class Ui_Dialog(object):
         self.comboBox_2.setGeometry(QtCore.QRect(133, 320, 111, 26))
         self.comboBox_2.setObjectName("comboBox_2")
         self.commandLinkButton = QtWidgets.QCommandLinkButton(Dialog)
-        self.commandLinkButton.setGeometry(QtCore.QRect(290, 570, 193, 41))
+        self.commandLinkButton.setGeometry(QtCore.QRect(340, 600, 131, 41))
         self.commandLinkButton.setObjectName("commandLinkButton")
         self.label_cname = QtWidgets.QLabel(Dialog)
         self.label_cname.setGeometry(QtCore.QRect(20, 50, 131, 16))

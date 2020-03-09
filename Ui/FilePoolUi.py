@@ -51,6 +51,6 @@ class Ui_Dialog(object):
         item = self.tableWidget.horizontalHeaderItem(1)
         item.setText(_translate("Dialog", "File Path"))
         item = self.tableWidget.horizontalHeaderItem(2)
-        item.setText(_translate("Dialog", "Score Type"))
+        item.setText(_translate("Dialog", "FileType"))
         item = self.tableWidget.horizontalHeaderItem(3)
         item.setText(_translate("Dialog", "Operations"))
