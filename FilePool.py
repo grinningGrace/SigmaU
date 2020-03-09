@@ -4,20 +4,21 @@ from PyQt5 import QtWidgets, Qt
 from PyQt5.QtCore import pyqtSlot, pyqtSignal, QStringListModel, QAbstractTableModel, QModelIndex
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtWidgets import QHBoxLayout, QTableWidget, QTableWidgetItem, QHeaderView, QAbstractItemView, QVBoxLayout, \
-    QCheckBox
+    QCheckBox, QFileDialog, QWidget, QPushButton
 
 from Ui.FilePoolUi import Ui_Dialog
 import ScorePanel
 import CheckBoxHeader
-import MyModel
-import MyButtonDelegate
 
-def SIGNAL(param):
-    pass
+
+
+
+
+
 
 
 class FilePool(QtWidgets.QDialog, Ui_Dialog):
-    myModel = MyModel.MyModel()
+
     def __init__(self, cname):
         super(FilePool, self).__init__()
         self.setupUi(self)
@@ -25,24 +26,29 @@ class FilePool(QtWidgets.QDialog, Ui_Dialog):
 
 
         self.pushButton.clicked.connect(lambda : self.goback(cname))
-        #
+
+        self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.setWindowTitle('File Pool')
 
-        self.tableView.setModel(self.myModel)
-        header = CheckBoxHeader.CheckBoxHeader()
-        self.tableView.setHorizontalHeader(header)
-        self.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-        header.clicked.connect(self.myModel.headerClick)
+        update_btn  = QtWidgets.QPushButton()
+        hlayout = QHBoxLayout()
+        hlayout.addWidget(update_btn)
+        # self.tableWidget.setCellWidget(0,3,update_btn)
 
-        self.tableView.setItemDelegateForColumn(3, MyButtonDelegate.MyButtonDelegate(self))
+        rsdata = [[1,2,3],[5,6,7,],[9,10,11]]
+        for row_number, row_data in enumerate(rsdata):
+            self.tableWidget.insertRow(row_number)
+            for i in range(len(row_data)+1):
+                if i<len(row_data):
+                    self.tableWidget.setItem(row_number,i,QtWidgets.QTableWidgetItem(str(row_data[i])))
+
+                    #Add button
+                if i == len(row_data):
+                    self.tableWidget.setCellWidget(row_number,i,self.buttonForRow(str(row_data[0])))
 
 
-    def cellUpdateButtonClicked(self):
-        print("Update Cell Button Clicked", self.sender().index)
 
 
-    def cellDeleteButtonClicked(self):
-        print("Delete Cell Button Clicked", self.sender().index)
 
 
     def goback(self, cname):
@@ -54,3 +60,54 @@ class FilePool(QtWidgets.QDialog, Ui_Dialog):
 
 
 
+
+
+
+
+    def buttonForRow(self,id):
+        widget = QWidget()
+        updateBtn = QPushButton('Update')
+        # updateBtn.setStyleSheet('''text-align:center;
+        # backgrourd-color:NavajoWhite;
+        # height:30px
+        # border-style:outset;
+        # font-13px
+        # ''')
+        updateBtn.clicked.connect(lambda:self.updateTable(id))
+
+        releaseBtn = QPushButton('Release')
+        # releaseBtn.setStyleSheet(
+        #     '''
+        #     text-align:center;
+        #     backgrourd-color:LightCoral;
+        #     height:30px
+        #     border-style:outset;
+        #     font-13px
+        #     '''
+        # )
+        releaseBtn.clicked.connect(lambda :self.releaseFile(id))
+
+        hlayout = QHBoxLayout()
+        hlayout.addWidget(updateBtn)
+        hlayout.addWidget(releaseBtn)
+        hlayout.setContentsMargins(5,2,5,2)
+        widget.setLayout(hlayout)
+        return widget
+
+
+
+    def updateTable(self,id):
+
+        filePath, filetype = QFileDialog.getOpenFileName(self,
+                                                     "Choose File",
+                                                     "./",
+                                                     "Excel (*.xls);;Text Files (*.txt)")  #设置文件扩展名过滤,注意用双分号间隔
+
+        print(filePath,filetype)
+        # update the tale after connect with db
+
+
+    def releaseFile(self,id):
+        pass
+
+        #release file after connect with db
