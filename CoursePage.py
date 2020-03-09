@@ -2,6 +2,8 @@ from PyQt5.QtCore import QStringListModel
 from PyQt5.QtWidgets import QListView
 import deleteCoursePage
 from PyQt5 import QtWidgets
+
+
 from Ui.CourseaPageUi import Ui_Dialog
 import AddCoursePage
 import MainPage

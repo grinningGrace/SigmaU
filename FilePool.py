@@ -47,21 +47,10 @@ class FilePool(QtWidgets.QDialog, Ui_Dialog):
                     self.tableWidget.setCellWidget(row_number,i,self.buttonForRow(str(row_data[0])))
 
 
-
-
-
-
     def goback(self, cname):
         self.hide()
         self.s = ScorePanel.ScorePanel(cname)
         self.s.show()
-
-
-
-
-
-
-
 
 
     def buttonForRow(self,id):
@@ -93,8 +82,6 @@ class FilePool(QtWidgets.QDialog, Ui_Dialog):
         hlayout.setContentsMargins(5,2,5,2)
         widget.setLayout(hlayout)
         return widget
-
-
 
     def updateTable(self,id):
 

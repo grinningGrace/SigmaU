@@ -36,8 +36,8 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.pushButton.setText(_translate("Dialog", "Input Matrix based Scores"))
-        self.pushButton_2.setText(_translate("Dialog", "Input Non-Matrix based Scores"))
+        self.pushButton.setText(_translate("Dialog", "Import Matrix based Scores"))
+        self.pushButton_2.setText(_translate("Dialog", "Import Non-Matrix based Scores"))
         self.pushButton_3.setText(_translate("Dialog", "View  Score Reports List"))
         self.pushButton_4.setText(_translate("Dialog", "Go back"))
         self.label.setText(_translate("Dialog", "Strategic Management 1001"))
