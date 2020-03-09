@@ -8,7 +8,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import qtawesome
+
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
