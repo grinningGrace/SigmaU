@@ -43,7 +43,7 @@ class MbasedScore_S2(QtWidgets.QDialog,Ui_Dialog):
 
 
     def saveMatrix(self):
-        wbFormulas = openpyxl.load_workbook('Matrix Template.xlsx')
+        wbFormulas = openpyxl.load_workbook('./excel file template/Matrix Template.xlsx')
         #
         fileName, suffix = QFileDialog.getSaveFileName(self, "Save File", "", "Excel file (*.xlsx)")
         print(fileName)  # 打印保存文件的全部路径（包括文件名和后缀名）
