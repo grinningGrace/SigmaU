@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Step 3.</string>
+    <string>Step 3. Final Step</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -38,6 +38,9 @@
    <property name="text">
     <string>Generate and Export Raw Score Input Template</string>
    </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
@@ -50,6 +53,9 @@
    </property>
    <property name="text">
     <string>Import Raw Score File</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -104,27 +110,21 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>360</y>
-     <width>431</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>View File Pool</string>
-   </property>
-  </widget>
   <widget class="QCommandLinkButton" name="commandLinkButton">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>590</y>
-     <width>193</width>
+     <x>110</x>
+     <y>570</y>
+     <width>261</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
    </property>
    <property name="text">
     <string>Finish and go to Course Panel</string>

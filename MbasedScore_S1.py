@@ -15,7 +15,7 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
     def __init__(self, cname):
         super(MbasedScore_S1, self).__init__()
         self.setupUi(self)
-        self.label_cname.setText(cname)
+        self.lineEdit_2.setText(cname)
 
         percent = 0
         if self.comboBox_3.currentText() =="Yes":
@@ -26,6 +26,7 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
             self.lineEdit.setVisible(False)
 
         self._stype1 = self.comboBox.currentText()
+        self._stype2 = ""
         self.comboBox_2.addItem("Mid-term test")
         self.comboBox_2.addItem("Group Project")
 
@@ -47,7 +48,7 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
 
     def toMbasedScore_S2(self,cname,stype, percent):
 
-        if self.comboBox_2.currentText()=="default value":
+        if self.comboBox_2.isVisible()==True and self.comboBox_2.currentText()=="default value":
             msg_box = QtWidgets.QMessageBox()
             msg_box.information(self,"Alert Message","Please choose the sub-type of Continuous Assessment")
 
@@ -94,11 +95,16 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
 
     def comboBox_act(self):
         self._stype1=""
+        self._stype2=""
         if self.comboBox.currentText()=="Final Exam Score File":
             self.comboBox_2.setVisible(False)
+            self.comboBox_3.setVisible(False)
+            self.label_6.setVisible(False)
 
         if self.comboBox.currentText()=="Continuous Assessment Score File":
             self.comboBox_2.setVisible(True)
+            self.comboBox_3.setVisible(True)
+            self.label_6.setVisible(True)
         self._stype1 = self.comboBox.currentText()
         # print("_stype:", self._stype)
 

@@ -25,6 +25,9 @@
    <property name="text">
     <string>Import Matrix based Scores</string>
    </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
@@ -38,6 +41,9 @@
    <property name="text">
     <string>Import Non-Matrix based Scores</string>
    </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
@@ -49,7 +55,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>View  Score Reports List</string>
+    <string>View  File Pool of This Course</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_4">
@@ -63,6 +72,9 @@
    </property>
    <property name="text">
     <string>Go back</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label">

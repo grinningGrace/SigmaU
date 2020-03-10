@@ -10,6 +10,12 @@
     <height>640</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <weight>50</weight>
+    <bold>false</bold>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
@@ -17,13 +23,13 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>70</y>
+     <y>50</y>
      <width>231</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Step 2. Setup settings</string>
+    <string>Step 2. Import Matrix File</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -38,6 +44,9 @@
    <property name="text">
     <string>Export Example Matrix</string>
    </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
@@ -50,6 +59,9 @@
    </property>
    <property name="text">
     <string>Import Matrix File</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -78,24 +90,11 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QCommandLinkButton" name="commandLinkButton_3">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>600</y>
-     <width>151</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Next Step</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_courseName">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>130</y>
+     <y>110</y>
      <width>431</width>
      <height>21</height>
     </rect>
@@ -123,11 +122,14 @@
      <x>10</x>
      <y>10</y>
      <width>161</width>
-     <height>51</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
     <string>Return to Score Panel</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
@@ -154,6 +156,32 @@
    </property>
    <property name="readOnly">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QCommandLinkButton" name="commandLinkButton">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>570</y>
+     <width>193</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Next Step</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>100</width>
+     <height>100</height>
+    </size>
    </property>
   </widget>
  </widget>

@@ -8,7 +8,7 @@ from PyQt5.QtWidgets import QHBoxLayout, QTableWidget, QTableWidgetItem, QHeader
 
 from Ui.FilePoolUi import Ui_Dialog
 import ScorePanel
-import CheckBoxHeader
+
 
 
 

@@ -38,6 +38,9 @@
    <property name="text">
     <string>Scores</string>
    </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="CRA">
    <property name="geometry">
@@ -50,6 +53,9 @@
    </property>
    <property name="text">
     <string>Generate CRA Report</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="Grade">
@@ -64,6 +70,9 @@
    <property name="text">
     <string>Generate Grade Report</string>
    </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="Analysis">
    <property name="geometry">
@@ -76,6 +85,9 @@
    </property>
    <property name="text">
     <string>Data Analysis</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="Goback">
@@ -102,6 +114,9 @@
    </property>
    <property name="text">
     <string>Import Updated Name List</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
    </property>
   </widget>
  </widget>

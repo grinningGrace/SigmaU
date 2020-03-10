@@ -33,7 +33,7 @@ class MbasedScore_S2(QtWidgets.QDialog,Ui_Dialog):
         self.pushButton.clicked.connect(self.saveMatrix)
         self.pushButton_2.clicked.connect(self.importMatrix)
         self.label_3.setText("")
-        self.commandLinkButton_3.clicked.connect(lambda:self.nextstep(cname,stype,percent))
+        self.commandLinkButton.clicked.connect(lambda:self.nextstep(cname,stype,percent))
         self.lineEdit.setText(percent)
 
 

@@ -26,39 +26,6 @@
     <string>Step 1: Setup Settings</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>120</y>
-     <width>111</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Course Title:</string>
-   </property>
-  </widget>
-  <widget class="QTextBrowser" name="textBrowser">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>120</y>
-     <width>321</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTextBrowser" name="textBrowser_2">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>190</y>
-     <width>121</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
@@ -75,7 +42,7 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>240</x>
      <y>190</y>
      <width>111</width>
      <height>41</height>
@@ -83,16 +50,6 @@
    </property>
    <property name="text">
     <string>Session No.</string>
-   </property>
-  </widget>
-  <widget class="QTextBrowser" name="textBrowser_3">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>190</y>
-     <width>111</width>
-     <height>31</height>
-    </rect>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
@@ -146,11 +103,18 @@
   <widget class="QCommandLinkButton" name="commandLinkButton">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>600</y>
+     <x>170</x>
+     <y>580</y>
      <width>131</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
    </property>
    <property name="text">
     <string>Next Step</string>
@@ -160,13 +124,13 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>90</y>
+     <y>140</y>
      <width>431</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>Course Name</string>
+    <string>Course Title</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_6">
@@ -246,12 +210,12 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>71</width>
+     <width>171</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Return</string>
+    <string>Return to Score Panel</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit">
@@ -264,14 +228,49 @@
     </rect>
    </property>
   </widget>
+  <widget class="QLineEdit" name="lineEdit_2">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>140</y>
+     <width>311</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_3">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>200</y>
+     <width>113</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_4">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>200</y>
+     <width>113</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
   <zorder>label_8</zorder>
   <zorder>label</zorder>
-  <zorder>label_2</zorder>
-  <zorder>textBrowser</zorder>
-  <zorder>textBrowser_2</zorder>
   <zorder>label_3</zorder>
   <zorder>label_4</zorder>
-  <zorder>textBrowser_3</zorder>
   <zorder>label_5</zorder>
   <zorder>comboBox</zorder>
   <zorder>comboBox_2</zorder>
@@ -283,6 +282,9 @@
   <zorder>label_9</zorder>
   <zorder>pushButton</zorder>
   <zorder>lineEdit</zorder>
+  <zorder>lineEdit_2</zorder>
+  <zorder>lineEdit_3</zorder>
+  <zorder>lineEdit_4</zorder>
  </widget>
  <resources/>
  <connections/>
