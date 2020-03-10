@@ -11,6 +11,7 @@ class MainPage(QMainWindow,Ui_MainWindow):
         self.setupUi(self)
         self.pushButton.clicked.connect(self.on_btn1_click)
         self.pushButton_2.clicked.connect(self.on_btn2_click)
+        self.setWindowTitle("Welcome Page")
 
 
 

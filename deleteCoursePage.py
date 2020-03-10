@@ -17,6 +17,7 @@ class deleteCousePage(QtWidgets.QDialog, Ui_Dialog):
         self.s = AlertInfo.AlertInfo(self)
         self.s.set_label_delete_msg()
         self.s.show()
+        self.setWindowTitle("Delete a Course")
 
     def goback(self):
         self.hide()

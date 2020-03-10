@@ -8,11 +8,12 @@ class ScorePanel(QtWidgets.QDialog,Ui_Dialog):
     def __init__(self,cname):
         super(ScorePanel, self).__init__()
         self.setupUi(self)
-        self.label.setText(cname)
+        course_code, course_title,course_session = cname.split("#")
+        self.label.setText(course_title+" ( "+course_session+" ) ")
         self.pushButton_3.clicked.connect(lambda: self.callFilePool(cname))
         self.pushButton_4.clicked.connect(lambda : self.goback(cname))
         self.pushButton.clicked.connect(lambda :self.MbasedScore(cname))
-
+        self.setWindowTitle("Score Panel")
 
     def callFilePool(self,cname):
         self.hide()

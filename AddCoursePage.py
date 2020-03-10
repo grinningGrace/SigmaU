@@ -11,6 +11,7 @@ class AddCoursePage(QtWidgets.QDialog,Ui_Dialog):
         self.setupUi(self)
         self.pushButton.clicked.connect(self.course_add_btn_clicked)
         self.pushButton_2.clicked.connect(self.goback)
+        self.setWindowTitle("Add a Course")
 
     def course_add_btn_clicked(self):
         self.s = AlertInfo.AlertInfo(self)

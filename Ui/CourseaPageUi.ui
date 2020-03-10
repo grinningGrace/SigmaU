@@ -16,31 +16,45 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>50</y>
-     <width>141</width>
+     <x>20</x>
+     <y>60</y>
+     <width>231</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Your courses</string>
+    <string>Your courses of this semester:</string>
    </property>
   </widget>
   <widget class="QListView" name="listView">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>20</x>
      <y>110</y>
-     <width>271</width>
-     <height>461</height>
+     <width>441</width>
+     <height>411</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+     <kerning>true</kerning>
+    </font>
+   </property>
+   <property name="cursor" stdset="0">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="addCourse">
    <property name="geometry">
     <rect>
-     <x>332</x>
-     <y>110</y>
+     <x>50</x>
+     <y>580</y>
      <width>121</width>
      <height>32</height>
     </rect>
@@ -52,8 +66,8 @@
   <widget class="QPushButton" name="deleteCourse">
    <property name="geometry">
     <rect>
-     <x>332</x>
-     <y>150</y>
+     <x>180</x>
+     <y>580</y>
      <width>121</width>
      <height>32</height>
     </rect>
@@ -65,8 +79,8 @@
   <widget class="QPushButton" name="logOut">
    <property name="geometry">
     <rect>
-     <x>332</x>
-     <y>190</y>
+     <x>300</x>
+     <y>580</y>
      <width>121</width>
      <height>32</height>
     </rect>
@@ -78,8 +92,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>590</y>
+     <x>20</x>
+     <y>530</y>
      <width>271</width>
      <height>31</height>
     </rect>
@@ -87,6 +101,64 @@
    <property name="text">
     <string>You have 7 courses in total</string>
    </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>30</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Select Year and Semester</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>30</y>
+     <width>131</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>2019-2020</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2020-2021</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2021-2022</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="comboBox_2">
+   <property name="geometry">
+    <rect>
+     <x>333</x>
+     <y>30</y>
+     <width>121</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Semester 1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Semester 2</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>

@@ -28,10 +28,12 @@ class MbasedScore_S2(QtWidgets.QDialog,Ui_Dialog):
         self._stype = stype
         self._percent = percent
         self.pushButton_3.clicked.connect(lambda :self.returntoScorePanel(cname))
-        self.label_courseName.setText(cname)
+        course_code, course_title,course_session = cname.split("#")
+        self.label_courseName.setText(course_title+" ( "+course_session+" ) ")
         self.label_scoreFileType.setText(stype)
         self.pushButton.clicked.connect(self.saveMatrix)
         self.pushButton_2.clicked.connect(self.importMatrix)
+        self.setWindowTitle("Import Matrix based Score - Step 2")
         self.label_3.setText("")
         self.commandLinkButton.clicked.connect(lambda:self.nextstep(cname,stype,percent))
         self.lineEdit.setText(percent)

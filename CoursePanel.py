@@ -8,9 +8,12 @@ class CoursePanel(QtWidgets.QDialog, Ui_Dialog):
         super(CoursePanel, self).__init__()
 
         self.setupUi(self)
-        self.label.setText(cname)
+        course_code, course_name, course_session = cname.split("#")
+
+        self.label.setText(course_name+" ( "+course_session+" ) ")
         self.Scores.clicked.connect(lambda: self.callScorePanel(cname))
         self.Goback.clicked.connect(self.goback)
+        self.setWindowTitle("Course Panel")
 
 
 

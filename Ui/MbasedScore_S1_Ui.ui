@@ -40,6 +40,9 @@
    </property>
   </widget>
   <widget class="QLabel" name="label_4">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -124,7 +127,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>140</y>
+     <y>100</y>
      <width>431</width>
      <height>16</height>
     </rect>
@@ -183,20 +186,20 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>480</y>
+     <y>520</y>
      <width>381</width>
      <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string>Please Specify the percentage </string>
+    <string>Specify the percentage </string>
    </property>
   </widget>
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>530</y>
+     <x>300</x>
+     <y>540</y>
      <width>141</width>
      <height>16</height>
     </rect>
@@ -221,50 +224,95 @@
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>530</y>
+     <x>180</x>
+     <y>540</y>
      <width>113</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_2">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>20</x>
      <y>140</y>
-     <width>311</width>
+     <width>421</width>
      <height>21</height>
     </rect>
    </property>
    <property name="readOnly">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_ccode">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>200</y>
+     <width>113</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_sno">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>200</y>
+     <width>121</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>500</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Name your Score type</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_3">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>200</y>
-     <width>113</width>
+     <x>180</x>
+     <y>500</y>
+     <width>111</width>
      <height>21</height>
     </rect>
-   </property>
-   <property name="readOnly">
-    <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
+  <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>200</y>
-     <width>113</width>
-     <height>21</height>
+     <x>300</x>
+     <y>500</y>
+     <width>121</width>
+     <height>16</height>
     </rect>
    </property>
-   <property name="readOnly">
-    <bool>true</bool>
+   <property name="text">
+    <string>e.g. Group Report</string>
    </property>
   </widget>
   <zorder>label_8</zorder>
@@ -283,8 +331,11 @@
   <zorder>pushButton</zorder>
   <zorder>lineEdit</zorder>
   <zorder>lineEdit_2</zorder>
+  <zorder>lineEdit_ccode</zorder>
+  <zorder>lineEdit_sno</zorder>
+  <zorder>label_2</zorder>
   <zorder>lineEdit_3</zorder>
-  <zorder>lineEdit_4</zorder>
+  <zorder>label_10</zorder>
  </widget>
  <resources/>
  <connections/>

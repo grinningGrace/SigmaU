@@ -34,7 +34,7 @@ class FilePool(QtWidgets.QDialog, Ui_Dialog):
         hlayout = QHBoxLayout()
         hlayout.addWidget(update_btn)
         # self.tableWidget.setCellWidget(0,3,update_btn)
-
+        self.setWindowTitle("File Pool")
         rsdata = [[1,2,3],[5,6,7,],[9,10,11]]
         for row_number, row_data in enumerate(rsdata):
             self.tableWidget.insertRow(row_number)
@@ -98,3 +98,5 @@ class FilePool(QtWidgets.QDialog, Ui_Dialog):
         pass
 
         #release file after connect with db
+
+

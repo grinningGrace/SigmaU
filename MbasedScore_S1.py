@@ -4,6 +4,7 @@ import deleteCoursePage
 from PyQt5 import QtWidgets
 import MbasedScore_S2
 import ScorePanel
+import re
 
 from Ui.MbasedScore_S1_Ui import Ui_Dialog
 
@@ -15,31 +16,39 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
     def __init__(self, cname):
         super(MbasedScore_S1, self).__init__()
         self.setupUi(self)
-        self.lineEdit_2.setText(cname)
 
-        percent = 0
+
+
         if self.comboBox_3.currentText() =="Yes":
             self.label_7.setVisible(False)
             self.label_8.setVisible(False)
             self.label_9.setVisible(False)
+            self.label_2.setVisible(False)
+            self.label_10.setVisible(False)
 
             self.lineEdit.setVisible(False)
+            self.lineEdit_3.setVisible(False)
 
         self._stype1 = self.comboBox.currentText()
         self._stype2 = ""
         self.comboBox_2.addItem("Mid-term test")
         self.comboBox_2.addItem("Group Project")
+        course_code, course_title,course_session = cname.split("#")
 
+
+        self.lineEdit_2.setText(course_title)
+        self.lineEdit_ccode.setText(course_code)
+        self.lineEdit_sno.setText(course_session)
         self.comboBox_3.activated.connect(self.combox3_choose)
 
         self.comboBox.activated.connect(self.comboBox_act)
 
         self.comboBox_2.activated.connect(self.comboBox_2_act)
-
+        self.setWindowTitle("Import Matrix based Score - Step 1")
         self.lineEdit.textChanged.connect(self.setPercentChange)
 
 
-        self.commandLinkButton.clicked.connect(lambda :self.toMbasedScore_S2(cname,self._stype1+", "+self._stype2, str(self._percent)))
+        self.commandLinkButton.clicked.connect(lambda :self.toMbasedScore_S2(cname,self._stype1+"  "+self._stype2, str(self._percent)))
         self.pushButton.clicked.connect(lambda :self.goback(cname))
 
 
@@ -57,15 +66,22 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
             if self.lineEdit.text()=="":
                 msg_box = QtWidgets.QMessageBox()
                 msg_box.information(self,"ALert Message","Please set the percentage!")
+            elif self.lineEdit_3.text()=="":
+                msg_box = QtWidgets.QMessageBox()
+                msg_box.information(self,"ALert Message","Please name your score type")
+
 
             else:
                 self.hide()
                 self.s = MbasedScore_S2.MbasedScore_S2(cname,stype, percent)
                 self.s.show()
+
+
+
         elif self.comboBox_3.currentText()=="Yes":
-            self.hide()
-            self.s = MbasedScore_S2.MbasedScore_S2(cname,stype, percent)
-            self.s.show()
+                self.hide()
+                self.s = MbasedScore_S2.MbasedScore_S2(cname,stype, percent)
+                self.s.show()
 
 
 
@@ -77,6 +93,9 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
             self.label_8.setVisible(False)
             self.label_9.setVisible(False)
             self.lineEdit.setVisible(False)
+            self.label_2.setVisible(False)
+            self.label_10.setVisible(False)
+            self.lineEdit_3.setVisible(False)
 
 
         elif self.comboBox_3.currentText()=="No":
@@ -84,6 +103,9 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
             self.label_8.setVisible(True)
             self.label_9.setVisible(True)
             self.lineEdit.setVisible(True)
+            self.label_2.setVisible(True)
+            self.label_10.setVisible(True)
+            self.lineEdit_3.setVisible(True)
 
 
 
