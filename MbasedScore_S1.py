@@ -21,7 +21,7 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
             self.label_8.setVisible(False)
             self.label_9.setVisible(False)
 
-            self.plainTextEdit.setVisible(False)
+            self.lineEdit.setVisible(False)
         self._stype = self.comboBox.currentText()+","+self.comboBox_2.currentText()
 
         self.comboBox_3.activated.connect(self.combox3_choose)
@@ -32,11 +32,16 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
 
 
 
-        percent = self._percent
 
 
 
-        self.commandLinkButton.clicked.connect(lambda :self.toMbasedScore_S2(cname,self._stype, percent))
+
+
+
+
+
+        self.lineEdit.textChanged.connect(self.setPercentChange)
+        self.commandLinkButton.clicked.connect(lambda :self.toMbasedScore_S2(cname,self._stype, self._percent))
         self.pushButton.clicked.connect(lambda :self.goback(cname))
 
 
@@ -44,10 +49,21 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
 
 
     def toMbasedScore_S2(self,cname,stype, percent):
-        self.hide()
-        self.s = MbasedScore_S2.MbasedScore_S2(cname,stype, percent)
-        stype = self.comboBox.currentText()+","+self.comboBox_2.currentText()
-        self.s.show()
+
+        if self.comboBox_3.currentText()=="No":
+
+            if self.lineEdit.text()!="":
+                self.hide()
+                self.s = MbasedScore_S2.MbasedScore_S2(cname,stype, percent)
+                self.s.show()
+            else:
+                msg_box = QtWidgets.QMessageBox()
+                msg_box.information(self,"ALert Message","Please set the percentage!")
+        else:
+            self.hide()
+            self.s = MbasedScore_S2.MbasedScore_S2(cname,stype, percent)
+
+            self.s.show()
 
 
     def combox3_choose(self):
@@ -55,15 +71,15 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
             self.label_7.setVisible(False)
             self.label_8.setVisible(False)
             self.label_9.setVisible(False)
-            self.plainTextEdit.setVisible(False)
+            self.lineEdit.setVisible(False)
 
-            self.plainTextEdit.setVisible(False)
+
         elif self.comboBox_3.currentText()=="No":
             # self.label_7.setVisible(True)
             self.label_8.setVisible(True)
             self.label_9.setVisible(True)
-            self.plainTextEdit.setVisible(True)
-            self._percent = self.plainTextEdit.__str__
+            self.lineEdit.setVisible(True)
+
 
 
 
@@ -71,7 +87,6 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
         self.hide()
         self.s = ScorePanel.ScorePanel(cname)
         self.s.show()
-
 
     def comboBox_act(self):
         self._stype=""
@@ -81,9 +96,14 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
         if self.comboBox.currentText()=="Continuous Assessment Score File":
             self.comboBox_2.setVisible(True)
         self._stype = self.comboBox.currentText()
-        print("_stype:", self._stype)
+        # print("_stype:", self._stype)
 
 
 
     def comboBox_2_act(self):
         self._stype = self._stype +","+self.comboBox_2.currentText()
+
+
+    def setPercentChange(self):
+        self._percent = 0
+        self._percent = self.lineEdit.text()
