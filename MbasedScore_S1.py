@@ -8,7 +8,9 @@ import ScorePanel
 from Ui.MbasedScore_S1_Ui import Ui_Dialog
 
 class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
-    _stype =""
+    _stype1 = ""
+    _stype2 = ""
+
     _percent = 0
     def __init__(self, cname):
         super(MbasedScore_S1, self).__init__()
@@ -22,7 +24,10 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
             self.label_9.setVisible(False)
 
             self.lineEdit.setVisible(False)
-        self._stype = self.comboBox.currentText()+","+self.comboBox_2.currentText()
+
+        self._stype1 = self.comboBox.currentText()
+        self.comboBox_2.addItem("Mid-term test")
+        self.comboBox_2.addItem("Group Project")
 
         self.comboBox_3.activated.connect(self.combox3_choose)
 
@@ -30,18 +35,10 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
 
         self.comboBox_2.activated.connect(self.comboBox_2_act)
 
-
-
-
-
-
-
-
-
-
-
         self.lineEdit.textChanged.connect(self.setPercentChange)
-        self.commandLinkButton.clicked.connect(lambda :self.toMbasedScore_S2(cname,self._stype, self._percent))
+
+
+        self.commandLinkButton.clicked.connect(lambda :self.toMbasedScore_S2(cname,self._stype1+", "+self._stype2, str(self._percent)))
         self.pushButton.clicked.connect(lambda :self.goback(cname))
 
 
@@ -50,20 +47,27 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
 
     def toMbasedScore_S2(self,cname,stype, percent):
 
-        if self.comboBox_3.currentText()=="No":
+        if self.comboBox_2.currentText()=="default value":
+            msg_box = QtWidgets.QMessageBox()
+            msg_box.information(self,"Alert Message","Please choose the sub-type of Continuous Assessment")
 
-            if self.lineEdit.text()!="":
+        elif self.comboBox_3.currentText()=="No":
+
+            if self.lineEdit.text()=="":
+                msg_box = QtWidgets.QMessageBox()
+                msg_box.information(self,"ALert Message","Please set the percentage!")
+
+            else:
                 self.hide()
                 self.s = MbasedScore_S2.MbasedScore_S2(cname,stype, percent)
                 self.s.show()
-            else:
-                msg_box = QtWidgets.QMessageBox()
-                msg_box.information(self,"ALert Message","Please set the percentage!")
-        else:
+        elif self.comboBox_3.currentText()=="Yes":
             self.hide()
             self.s = MbasedScore_S2.MbasedScore_S2(cname,stype, percent)
-
             self.s.show()
+
+
+
 
 
     def combox3_choose(self):
@@ -89,19 +93,20 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
         self.s.show()
 
     def comboBox_act(self):
-        self._stype=""
+        self._stype1=""
         if self.comboBox.currentText()=="Final Exam Score File":
             self.comboBox_2.setVisible(False)
 
         if self.comboBox.currentText()=="Continuous Assessment Score File":
             self.comboBox_2.setVisible(True)
-        self._stype = self.comboBox.currentText()
+        self._stype1 = self.comboBox.currentText()
         # print("_stype:", self._stype)
 
 
 
     def comboBox_2_act(self):
-        self._stype = self._stype +","+self.comboBox_2.currentText()
+        self._stype2 = ""
+        self._stype2 = self.comboBox_2.currentText()
 
 
     def setPercentChange(self):

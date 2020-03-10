@@ -11,7 +11,7 @@ import xlrd
 import xlwt
 import openpyxl
 # import pyexcel as p
-import MbasedScore_S1
+import ScorePanel
 
 from Ui.MbasedScore_S2_Ui import Ui_Dialog
 
@@ -27,22 +27,22 @@ class MbasedScore_S2(QtWidgets.QDialog,Ui_Dialog):
         self.setupUi(self)
         self._stype = stype
         self._percent = percent
-        self.pushButton_3.clicked.connect(lambda :self.goback(cname))
+        self.pushButton_3.clicked.connect(lambda :self.returntoScorePanel(cname))
         self.label_courseName.setText(cname)
         self.label_scoreFileType.setText(stype)
         self.pushButton.clicked.connect(self.saveMatrix)
         self.pushButton_2.clicked.connect(self.importMatrix)
         self.label_3.setText("")
         self.commandLinkButton_3.clicked.connect(lambda:self.nextstep(cname,stype,percent))
-        self.label_3.setText("")
+        self.lineEdit.setText(percent)
 
 
 
 
 
-    def goback(self,cname):
+    def returntoScorePanel(self,cname):
         self.hide()
-        self.s = MbasedScore_S1.MbasedScore_S1(cname)
+        self.s = ScorePanel.ScorePanel(cname)
         self.s.show()
 
 
