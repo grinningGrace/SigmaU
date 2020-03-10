@@ -106,7 +106,7 @@ class Ui_Dialog(object):
         self.label_3.setText(_translate("Dialog", "Course Code:"))
         self.label_4.setText(_translate("Dialog", "Session No."))
         self.label_5.setText(_translate("Dialog", "Score File Type"))
-        self.comboBox.setItemText(0, _translate("Dialog", "Continous Assessment Score File"))
+        self.comboBox.setItemText(0, _translate("Dialog", "Continuous Assessment Score File"))
         self.comboBox.setItemText(1, _translate("Dialog", "Final Exam Score File"))
         self.commandLinkButton.setText(_translate("Dialog", "Next Step"))
         self.label_cname.setText(_translate("Dialog", "Course Name"))

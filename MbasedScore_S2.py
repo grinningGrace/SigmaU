@@ -2,7 +2,7 @@ from PyQt5.QtCore import QStringListModel
 from PyQt5.QtWidgets import QListView, QFileDialog
 from qtpy import QtCore
 
-import deleteCoursePage
+
 from PyQt5 import QtWidgets
 
 # import pandas as pd
@@ -10,13 +10,12 @@ from xlutils.copy import copy
 import xlrd
 import xlwt
 import openpyxl
-import pyexcel as p
-
-
-
+# import pyexcel as p
 import MbasedScore_S1
 
 from Ui.MbasedScore_S2_Ui import Ui_Dialog
+
+import MbasedScore_S3
 
 class MbasedScore_S2(QtWidgets.QDialog,Ui_Dialog):
     _stype = 0
@@ -33,6 +32,11 @@ class MbasedScore_S2(QtWidgets.QDialog,Ui_Dialog):
         self.label_scoreFileType.setText(stype)
         self.pushButton.clicked.connect(self.saveMatrix)
         self.pushButton_2.clicked.connect(self.importMatrix)
+        self.label_3.setText("")
+        self.commandLinkButton_3.clicked.connect(lambda:self.nextstep(cname,stype,percent))
+        self.label_3.setText("")
+
+
 
 
 
@@ -56,16 +60,25 @@ class MbasedScore_S2(QtWidgets.QDialog,Ui_Dialog):
 
 
         # p.save_book_as(file_name='Matrix Template.xlsx',
-        #                dest_file_name=fileName[0])
+        #                dest_file_name=fileName)
 
     def importMatrix(self):
         fileName,suffix = QFileDialog.getOpenFileName(self, "Import Matrix xlsx File", "", "Excel file (*.xlsx)")
-
-        self.label_3.setText(fileName)
-
-
+        if not fileName =="":
+            self.label_3.setText(fileName)
 
 
+
+    def nextstep(self,cname,stype,percent):
+        if self.label_3.text()=="":
+
+            msg_box = QtWidgets.QMessageBox()
+            msg_box.information(self,'Alert Message','please choose the matrix file path!')
+        else:
+
+            self.hide()
+            self.s = MbasedScore_S3.MbasedScore_S3(cname,stype,percent)
+            self.s.show()
 
 
 

@@ -8,13 +8,13 @@ import ScorePanel
 from Ui.MbasedScore_S1_Ui import Ui_Dialog
 
 class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
-    _stype = ""
+    _stype =""
     _percent = 0
     def __init__(self, cname):
         super(MbasedScore_S1, self).__init__()
         self.setupUi(self)
         self.label_cname.setText(cname)
-        stype = self.comboBox.currentText()+","+self.comboBox_2.currentText()
+
         percent = 0
         if self.comboBox_3.currentText() =="Yes":
             self.label_7.setVisible(False)
@@ -22,15 +22,21 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
             self.label_9.setVisible(False)
 
             self.plainTextEdit.setVisible(False)
+        self._stype = self.comboBox.currentText()+","+self.comboBox_2.currentText()
 
         self.comboBox_3.activated.connect(self.combox3_choose)
 
+        self.comboBox.activated.connect(self.comboBox_act)
+
+        self.comboBox_2.activated.connect(self.comboBox_2_act)
 
 
-        _stype = stype
-        _percent = percent
 
-        self.commandLinkButton.clicked.connect(lambda :self.toMbasedScore_S2(cname,stype, percent))
+        percent = self._percent
+
+
+
+        self.commandLinkButton.clicked.connect(lambda :self.toMbasedScore_S2(cname,self._stype, percent))
         self.pushButton.clicked.connect(lambda :self.goback(cname))
 
 
@@ -40,6 +46,7 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
     def toMbasedScore_S2(self,cname,stype, percent):
         self.hide()
         self.s = MbasedScore_S2.MbasedScore_S2(cname,stype, percent)
+        stype = self.comboBox.currentText()+","+self.comboBox_2.currentText()
         self.s.show()
 
 
@@ -64,3 +71,19 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
         self.hide()
         self.s = ScorePanel.ScorePanel(cname)
         self.s.show()
+
+
+    def comboBox_act(self):
+        self._stype=""
+        if self.comboBox.currentText()=="Final Exam Score File":
+            self.comboBox_2.setVisible(False)
+
+        if self.comboBox.currentText()=="Continuous Assessment Score File":
+            self.comboBox_2.setVisible(True)
+        self._stype = self.comboBox.currentText()
+        print("_stype:", self._stype)
+
+
+
+    def comboBox_2_act(self):
+        self._stype = self._stype +","+self.comboBox_2.currentText()
