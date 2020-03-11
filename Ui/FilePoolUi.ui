@@ -42,12 +42,12 @@
    </column>
    <column>
     <property name="text">
-     <string>File Path</string>
+     <string>File type</string>
     </property>
    </column>
    <column>
     <property name="text">
-     <string>FileType</string>
+     <string>File sub-Type</string>
     </property>
    </column>
    <column>

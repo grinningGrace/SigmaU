@@ -1,7 +1,7 @@
 from PyQt5.QtCore import QStringListModel
 from PyQt5.QtWidgets import QListView, QFileDialog
 from qtpy import QtCore
-
+import datetime
 
 from PyQt5 import QtWidgets
 
@@ -42,6 +42,7 @@ class MbasedScore_S2(QtWidgets.QDialog,Ui_Dialog):
 
 
 
+
     def returntoScorePanel(self,cname):
         self.hide()
         self.s = ScorePanel.ScorePanel(cname)
@@ -51,12 +52,12 @@ class MbasedScore_S2(QtWidgets.QDialog,Ui_Dialog):
     def saveMatrix(self):
         wbFormulas = openpyxl.load_workbook('./excel file template/Matrix Template.xlsx')
         #
-        fileName, suffix = QFileDialog.getSaveFileName(self, "Save File", "", "Excel file (*.xlsx)")
-        print(fileName)  # 打印保存文件的全部路径（包括文件名和后缀名）
+        filePath, suffix = QFileDialog.getSaveFileName(self, "Save File", "", "Excel file (*.xlsx)")
+        print(filePath)  # 打印保存文件的全部路径（包括文件名和后缀名）
         #
         #
-        if not fileName =="":
-            wbFormulas.save(fileName)
+        if not filePath =="":
+            wbFormulas.save(filePath)
 
 
 
@@ -65,9 +66,28 @@ class MbasedScore_S2(QtWidgets.QDialog,Ui_Dialog):
         #                dest_file_name=fileName)
 
     def importMatrix(self):
-        fileName,suffix = QFileDialog.getOpenFileName(self, "Import Matrix xlsx File", "", "Excel file (*.xlsx)")
-        if not fileName =="":
-            self.label_3.setText(fileName)
+        filePath,suffix = QFileDialog.getOpenFileName(self, "Import Matrix xlsx File", "", "Excel file (*.xlsx)")
+        if not filePath =="":
+            self.label_3.setText(filePath)
+            wbFormulas = openpyxl.load_workbook(filePath)
+            dic = {"Continuous Assessment Score File":'CA',
+                   "Final Exam Score File":'Final'
+                   }
+            is_subtype = self._stype.split(";")[2]
+
+            score_type = ""
+
+
+            if is_subtype =='False':
+                score_type = dic[self._stype.split(";")[0]]
+
+
+            elif is_subtype=='True':
+                score_type = dic[self._stype.split(";")[0]]+"-"+self._stype.split(";")[1]+"-"+self._stype.split(";")[3]
+
+            fileName = score_type+'.xlsx'
+            wbFormulas.save("./Raw Score Files/"+fileName)
+
 
 
 

@@ -15,6 +15,7 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
     _subtypeName = ""
     _stype=""
     _percent = 0
+    _isMbased = True
     def __init__(self, cname):
         super(MbasedScore_S1, self).__init__()
         self.setupUi(self)
@@ -52,7 +53,7 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
         self.setWindowTitle("Import Matrix based Score - Step 1")
         self.lineEdit.textChanged.connect(self.setPercentChange)
         self.lineEdit_3.textChanged.connect(self.setSubTypeName)
-        print(self._isSubtype)
+
 
 
         self.commandLinkButton.clicked.connect(lambda :self.toMbasedScore_S2(cname,self._stype, str(self._percent)))
@@ -140,6 +141,8 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
             self.lineEdit.setVisible(False)
             self.label_8.setVisible(False)
             self.label_9.setVisible(False)
+
+
             self._stype1 = self.comboBox.currentText()
             self._stype = self._stype1+","+self._stype2+","+str(self._isSubtype)+","+self._subtypeName
 
@@ -166,4 +169,4 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
         self._isSubtype = True
         self._subtypeName = ""
         self._subtypeName = self.lineEdit_3.text()
-        self._stype = self._stype1+"  "+self._stype2+" "+str(self._isSubtype)+" "+self._subtypeName
+        self._stype = self._stype1+";"+self._stype2+";"+str(self._isSubtype)+";"+self._subtypeName

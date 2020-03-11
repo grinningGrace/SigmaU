@@ -28,6 +28,7 @@ class FilePool(QtWidgets.QDialog, Ui_Dialog):
         self.pushButton.clicked.connect(lambda : self.goback(cname))
 
         self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeToContents)
         self.setWindowTitle('File Pool')
 
         update_btn  = QtWidgets.QPushButton()
