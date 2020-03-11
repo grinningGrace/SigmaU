@@ -42,6 +42,6 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.pushButton.setText(_translate("Dialog", "Import Matrix based Scores"))
         self.pushButton_2.setText(_translate("Dialog", "Import Non-Matrix based Scores"))
-        self.pushButton_3.setText(_translate("Dialog", "View  File Pool of This Course"))
+        self.pushButton_3.setText(_translate("Dialog", "View  Raw Score File Pool of This Course"))
         self.pushButton_4.setText(_translate("Dialog", "Go back"))
         self.label.setText(_translate("Dialog", "Strategic Management 1001"))

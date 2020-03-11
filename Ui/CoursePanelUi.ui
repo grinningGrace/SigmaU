@@ -102,6 +102,9 @@
    <property name="text">
     <string>Go back</string>
    </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="NmList">
    <property name="geometry">

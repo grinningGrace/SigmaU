@@ -18,7 +18,7 @@ from Ui.MbasedScore_S2_Ui import Ui_Dialog
 import MbasedScore_S3
 
 class MbasedScore_S2(QtWidgets.QDialog,Ui_Dialog):
-    _stype = 0
+    _stype = ""
     _percent = 0
 
 

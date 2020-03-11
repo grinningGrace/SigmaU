@@ -35,6 +35,7 @@ class Ui_Dialog(object):
         self.Analysis.setObjectName("Analysis")
         self.Goback = QtWidgets.QPushButton(Dialog)
         self.Goback.setGeometry(QtCore.QRect(320, 460, 113, 32))
+        self.Goback.setAutoDefault(False)
         self.Goback.setObjectName("Goback")
         self.NmList = QtWidgets.QPushButton(Dialog)
         self.NmList.setGeometry(QtCore.QRect(70, 140, 321, 41))

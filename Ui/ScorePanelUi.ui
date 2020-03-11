@@ -55,7 +55,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>View  File Pool of This Course</string>
+    <string>View  Raw Score File Pool of This Course</string>
    </property>
    <property name="autoDefault">
     <bool>false</bool>
