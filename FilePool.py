@@ -4,7 +4,8 @@ from PyQt5 import QtWidgets, Qt
 from PyQt5.QtCore import pyqtSlot, pyqtSignal, QStringListModel, QAbstractTableModel, QModelIndex
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtWidgets import QHBoxLayout, QTableWidget, QTableWidgetItem, QHeaderView, QAbstractItemView, QVBoxLayout, \
-    QCheckBox, QFileDialog, QWidget, QPushButton
+    QCheckBox, QFileDialog, QWidget, QPushButton, QItemDelegate
+from qtpy import QtCore
 
 from Ui.FilePoolUi import Ui_Dialog
 import ScorePanel
@@ -36,12 +37,20 @@ class FilePool(QtWidgets.QDialog, Ui_Dialog):
         hlayout.addWidget(update_btn)
         # self.tableWidget.setCellWidget(0,3,update_btn)
         self.setWindowTitle("File Pool")
+
+        self.tableWidget.setItemDelegateForColumn(2,EmptyDelegate(self))
+        self.tableWidget.setItemDelegateForColumn(1,EmptyDelegate(self))
+        self.tableWidget.setItemDelegateForColumn(0,EmptyDelegate(self))
         rsdata = [[1,2,3],[5,6,7,],[9,10,11]]
+
+
         for row_number, row_data in enumerate(rsdata):
             self.tableWidget.insertRow(row_number)
             for i in range(len(row_data)+1):
                 if i<len(row_data):
-                    self.tableWidget.setItem(row_number,i,QtWidgets.QTableWidgetItem(str(row_data[i])))
+                    item = QTableWidgetItem(str(row_data[i]))
+
+                    self.tableWidget.setItem(row_number,i,item)
 
                     #Add button
                 if i == len(row_data):
@@ -88,3 +97,10 @@ class FilePool(QtWidgets.QDialog, Ui_Dialog):
         #release file after connect with db
 
 
+
+class EmptyDelegate(QItemDelegate):
+    def __init__(self,parent):
+        super(EmptyDelegate, self).__init__(parent)
+
+    def createEditor(self, QWidget, QStyleOptionViewItem, QModelIndex):
+        return None
