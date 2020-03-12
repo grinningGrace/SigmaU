@@ -2,6 +2,7 @@ from PyQt5.QtCore import QStringListModel
 from PyQt5.QtWidgets import QListView, QFileDialog, QHeaderView
 from qtpy import QtCore
 import datetime
+import NMbasedScore_S3
 
 from PyQt5 import QtWidgets
 
@@ -15,6 +16,7 @@ class NMbasedScore_S2(QtWidgets.QDialog,Ui_Dialog):
         self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         # self.tableWidget.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeToContents)
         self.tableWidget.setColumnWidth(0, 240)
+        self.commandLinkButton.clicked.connect(lambda:self.toNMbasedScoreS3(cname,stype,percent))
 
 
 
@@ -32,4 +34,7 @@ class NMbasedScore_S2(QtWidgets.QDialog,Ui_Dialog):
                     self.tableWidget.setItem(row,column,QtWidgets.QTableWidgetItem("Null"))
 
 
-
+    def toNMbasedScoreS3(self,cname,stype,percent):
+        self.hide()
+        self.s = NMbasedScore_S3.NMbasedScore_S3(cname,stype,percent)
+        self.s.show()
