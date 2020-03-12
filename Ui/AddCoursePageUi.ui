@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>0</y>
+     <y>30</y>
      <width>271</width>
      <height>61</height>
     </rect>
@@ -220,37 +220,40 @@
     <string>Assistant Instructor</string>
    </property>
   </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_2">
+  <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>560</y>
-     <width>421</width>
+     <x>10</x>
+     <y>10</y>
+     <width>180</width>
      <height>32</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
-    <item>
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="text">
-       <string>Cancel</string>
-      </property>
-      <property name="autoDefault">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Add</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
+   <property name="text">
+    <string>Return to Course Page</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>560</y>
+     <width>421</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add Course Assessment Criteria</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
   </widget>
  </widget>
  <resources/>
