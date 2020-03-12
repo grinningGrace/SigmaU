@@ -57,24 +57,11 @@ class FilePool(QtWidgets.QDialog, Ui_Dialog):
     def buttonForRow(self,id):
         widget = QWidget()
         updateBtn = QPushButton('Update')
-        # updateBtn.setStyleSheet('''text-align:center;
-        # backgrourd-color:NavajoWhite;
-        # height:30px
-        # border-style:outset;
-        # font-13px
-        # ''')
+
         updateBtn.clicked.connect(lambda:self.updateTable(id))
 
         releaseBtn = QPushButton('Release')
-        # releaseBtn.setStyleSheet(
-        #     '''
-        #     text-align:center;
-        #     backgrourd-color:LightCoral;
-        #     height:30px
-        #     border-style:outset;
-        #     font-13px
-        #     '''
-        # )
+
         releaseBtn.clicked.connect(lambda :self.releaseFile(id))
 
         hlayout = QHBoxLayout()
