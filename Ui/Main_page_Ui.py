@@ -55,7 +55,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "Welcome to DBM TA helper!"))
+        self.label.setText(_translate("MainWindow", "Welcome to SigmaU!"))
         self.label_2.setText(_translate("MainWindow", "Username"))
         self.label_3.setText(_translate("MainWindow", "Password"))
         self.label_4.setText(_translate("MainWindow", "by Grace Wang"))

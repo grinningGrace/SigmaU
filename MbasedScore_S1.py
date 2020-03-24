@@ -144,7 +144,7 @@ class MbasedScore_S1(QtWidgets.QDialog,Ui_Dialog):
 
 
             self._stype1 = self.comboBox.currentText()
-            self._stype = self._stype1+","+self._stype2+","+str(self._isSubtype)+","+self._subtypeName
+            self._stype = self._stype1+"#"+self._stype2+"#"+str(self._isSubtype)+"#"+self._subtypeName
 
 
         if self.comboBox.currentText()=="Continuous Assessment Score File":

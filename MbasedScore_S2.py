@@ -73,13 +73,13 @@ class MbasedScore_S2(QtWidgets.QDialog,Ui_Dialog):
             dic = {"Continuous Assessment Score File":'CA',
                    "Final Exam Score File":'Final'
                    }
-            is_subtype = self._stype.split(";")[2]
+            is_subtype = self._stype.split("#")[2]
 
             score_type = ""
 
 
             if is_subtype =='False':
-                score_type = dic[self._stype.split(";")[0]]
+                score_type = dic[self._stype.split("#")[0]]
 
 
             elif is_subtype=='True':

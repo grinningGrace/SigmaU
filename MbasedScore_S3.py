@@ -1,5 +1,7 @@
 from PyQt5.QtWidgets import QListView, QFileDialog
 from PyQt5 import QtWidgets
+import openpyxl
+
 import ScorePanel
 import FilePool
 
@@ -15,6 +17,7 @@ class MbasedScore_S3(QtWidgets.QDialog,Ui_Dialog):
         self.label_3.setText(stype)
         self.lineEdit.setText(percent)
         self.commandLinkButton.clicked.connect(lambda :self.rtn_to_score_panel(cname))
+        self.pushButton_2.clicked.connect(lambda:self.imprtRawScore(cname))
 
 
 
@@ -24,4 +27,10 @@ class MbasedScore_S3(QtWidgets.QDialog,Ui_Dialog):
         self.s.show()
 
 
+    def imprtRawScore(self,cname):
+        filePath,suffix = QFileDialog.getOpenFileName(self, "Import Raw Score xlsx File", "", "Excel file (*.xlsx)")
+        if not filePath =="":
+            self.label_5.setText(filePath)
+            wbFormulas = openpyxl.load_workbook(filePath)
+            wbFormulas.save("./Raw Score Files/"+cname+'Raw Score'+'xlsx')
 

@@ -14,6 +14,9 @@ class NMbasedScore_S3(QtWidgets.QDialog,Ui_Dialog):
         self.setWindowTitle("Import Matrix based Score - Step 3")
         self.label_3.setText(stype)
         self.lineEdit.setText(percent)
+
+
+
         self.commandLinkButton.clicked.connect(lambda :self.rtn_to_score_panel(cname))
 
 

@@ -35,7 +35,7 @@ class Ui_Dialog(object):
         self.label_4.setGeometry(QtCore.QRect(40, 290, 141, 31))
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(Dialog)
-        self.label_5.setGeometry(QtCore.QRect(40, 330, 60, 16))
+        self.label_5.setGeometry(QtCore.QRect(40, 330, 431, 61))
         self.label_5.setObjectName("label_5")
         self.commandLinkButton = QtWidgets.QCommandLinkButton(Dialog)
         self.commandLinkButton.setGeometry(QtCore.QRect(110, 570, 261, 41))
